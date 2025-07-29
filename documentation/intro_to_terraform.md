@@ -77,6 +77,8 @@ terraform apply -var-file=instance_params.pchem.tfvars -var-file=students.pchem.
 Similarly, create three `.genchem.tfvars` files, and a 'genchem' workspace at the appointed time:
 
 >Note: The naming convention of the `.tfvars` files does not need to match the name of the workspace, but you may find the paradigm convenient.
+>
+>WARNING! The student usernames need to be unique across workspaces!
 
 ```
 terraform workspace new genchem
