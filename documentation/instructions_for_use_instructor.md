@@ -74,8 +74,8 @@ Access CloudShell [here](https://console.aws.amazon.com/cloudshell/home).
 		terraform destroy
 	```
 > **WARNING!** If resources are not destroyed, you will continue to get charged!!! It is a good idea to always run terraform destroy even if terraform apply gives you an error as partial resources may have been created.
-
-
+> 
+> Note: Data in AWS CloudShell remains even if you close the browser and/or logout. Each AWS Region allows up to 1 GB of persistent storage at no additional cost. However, if you do not log into CloudShell for more than 120 days the data is deleted. For more information see the AWS documentation on [Persistent storage](https://docs.aws.amazon.com/cloudshell/latest/userguide/limits.html#persistent-storage-limitations).
 
 
    
