@@ -1,5 +1,5 @@
 ## _Introduction to Terraform_
-Contents of this Supporting Information Document:
+Contents:
 
 - [State file](#state-file)
 - [Providers](#providers)
@@ -8,9 +8,9 @@ Contents of this Supporting Information Document:
 - [Interpreting a Terraform Plan](#interpreting-a-terraform-plan)
 - [Troubleshooting](#troubleshooting)
 
-Terraform is a declarative Infrastructure as Code (IaC) tool for provisioning virtual infrastructure. It is a modular tool that works with multiple Cloud Service Providers (CSPs). Infrastructure is defined in reuseable human-readable configuration files that can be versioned and shared.
+[Terraform](https://developer.hashicorp.com/terraform) is a declarative Infrastructure as Code (IaC) tool for provisioning virtual infrastructure. It is a modular tool that works with multiple Cloud Service Providers (CSPs). Infrastructure is defined in reuseable human-readable configuration files that can be versioned and shared.
 
-Terraform is _declarative_ which means that code is written to describe the desired end state, as opposed to the more familiar _procedural_ paradigm in which code defines a series of steps to take. Terraform determines the procedure it needs to follow automatically, and presents this to the user for approval before execution. This is known as the _terraform plan_. We will discuss how to interpret a Terraform plan later.
+Terraform is _declarative_ which means that code is written to describe the desired end state, as opposed to the more familiar _procedural_ paradigm in which code defines a series of steps to take. Terraform determines the procedure it needs to follow automatically, and presents this to the user for approval before execution. This is known as the _terraform plan_. We discuss how to [interpret a Terraform plan](#interpreting-a-terraform-plan) below.
 
 ### State file
 Terraform keeps track of the effects of actions it has performed in a _state file_. The state file acts as Terraform's source of truth for any changes it needs to make. It is Terraform's "concept of reality" thus it is important to never remove or manually edit the state file. While it is possible to store the state file in many different ways, the default way (and the way we use here) is an on-disk file that is created alongside the Terraform code; it is named `terraform.tfstate`. *Do not remove or modify this file!*
@@ -122,7 +122,7 @@ Because Terraform is interacting with remote CSPs, the most common errors encoun
 
 For errors when running `terraform apply` you may encounter:
 ##### Resource limits imposed by AWS
-Newly created AWS accounts have a limit on the number of CPU cores that can be provisioned. This limit can be increased by AWS support. We have included instructions to request this increase elsewhere in our documentation. See [instructions\_for\_use\_instructor.md](instructions_for_use_instructor.md).
+Newly created AWS accounts have a limit on the number of CPU cores that can be provisioned. This limit can be increased by AWS support. We have included [instructions](https://github.com/wintercompchem/byodcloud/blob/main/documentation/instructions_for_use_instructor.md#requesting-a-quota-increase-in-aws) to request this increase elsewhere in our documentation.
 
 If you encounter this error, run `terraform destroy`, request the increase and run `terraform apply` again after the increase has been granted.
 ##### Temporary resource limits

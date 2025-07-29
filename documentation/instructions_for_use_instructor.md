@@ -1,6 +1,6 @@
 
 ## _Instructor Supplementary Information_
-Contents of this Supporting Information Document:
+Contents:
 
 - [Creating an AWS Account](#creating-an-aws-account)
 - [Requesting a Quota Increase in AWS](#requesting-a-quota-increase-in-aws)
