@@ -15,6 +15,11 @@
 # is not needed. $variable_name here will be passed to bash
 # unmodified.
 # 
+# NOTE: The script below downloads and configures Psi4. 
+# Allow approximately 5 minutes after 
+# instance launch for installation to complete before
+# logging into the instance.
+#
 init_commands = <<END
 # Install Psi4 
 # Script adapted from https://psicode.org/installs/v191/
@@ -22,5 +27,5 @@ curl https://vergil.chemistry.gatech.edu/psicode-download/Psi4conda-1.9.1-py312-
 cd /home/ssm-user
 chown ssm-user:ssm-user Psi4conda-1.9.1-py312-Linux-x86_64.sh
 su - ssm-user -c "bash Psi4conda-1.9.1-py312-Linux-x86_64.sh -b -p /home/ssm-user/psi4conda"
-echo $'. $HOME/psi4conda/etc/profile.d/conda.sh\nconda activate' >> /home/ssm-user/.bashrc
+echo $'. /home/ssm-user/psi4conda/etc/profile.d/conda.sh\nconda activate' >> /home/ssm-user/.bashrc
 END

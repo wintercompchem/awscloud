@@ -14,6 +14,11 @@
 # If you are not using the braces, doubling the dollar sign
 # is not needed. $variable_name here will be passed to bash
 # unmodified.
+#
+# NOTE: The script below compiles Gromacs from source, which can be
+# a lengthy process. Allow approximately 30 minutes after 
+# instance launch for installation to complete before logging 
+# into the instance.
 # 
 init_commands = <<END
 # Install Gromacs.
