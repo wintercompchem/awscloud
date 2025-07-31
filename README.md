@@ -3,7 +3,8 @@
 Content may be periodically updated to fix bugs and make enhancements.
 
 ## Abstract
-In this work we provide a template for running computational labs in the cloud in an effort to improve access to computational resources for both students and instructors. Specifically, we provide a Terraform code that provisions resources in Amazon Web Services (AWS). The instructor can spin up an instance per student and have the necessary software automatically installed upon instance creation using a customizable script. Students can access the instance using a command line interface within any standard web browser on any device. Any generated data files can also be downloaded via the same web browser. We outline example workloads including open-source molecular dynamics and quantum chemistry programs.
+In this work we provide a template for running computational labs in the cloud in an effort to improve access to computational resources for both students and instructors. Specifically, we provide a Terraform code that provisions resources in Amazon Web Services (AWS). The instructor can create a virtual machine (an "instance") per student and have the necessary software automatically installed upon instance creation
+using a customizable script. Students can access the instance using a command line interface within any standard web browser on any device. Any generated data files can be downloaded via the same web browser. We outline example workloads including open-source molecular dynamics and quantum chemistry programs. The Terraform code, including associated documentation and example workload files, can be obtained through GitHub [(https://github.com/wintercompchem/byodcloud)](https://github.com/wintercompchem/byodcloud).
 
 ## We include the following documentation for the code:
 
