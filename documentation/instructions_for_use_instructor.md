@@ -66,6 +66,7 @@ Access CloudShell [here](https://console.aws.amazon.com/cloudshell/home).
 	```sh
 		terraform apply
 	```
+The output of `terraform apply` includes the student passwords which need to be distributed to the students. The students can then follow [these instructions](https://github.com/wintercompchem/byodcloud/blob/main/documentation/instructions_for_use_student.md) to access their instances.
 > Note: At any point, student instances can be added or removed by adjusting the students.auto.tfvars file accordingly and re-running terraform apply.  
 
 9. When the lab is done you must destroy all resources with the following command:
