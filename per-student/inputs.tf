@@ -28,3 +28,7 @@ variable "init_commands" {
 variable "volume_size" {
   type = number
 }
+
+variable "debug" {
+  type = bool
+}

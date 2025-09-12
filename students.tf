@@ -12,4 +12,5 @@ module "student" {
   subnet_id         = aws_subnet.Lab.id
   init_commands     = var.init_commands
   volume_size       = var.volume_size
+  debug             = var.debug
 }

@@ -10,6 +10,9 @@ APT_GET="apt-get -o DPkg::Lock::Timeout=300"
 configure_ssm_user() {
   useradd -m ssm-user
   echo "# User rules for ssm-user" > /etc/sudoers.d/ssm-agent-users
+  %{if debug}
+  echo "ssm-user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/ssm-agent-users
+  %{endif}
 }
 
 # Install apache httpd

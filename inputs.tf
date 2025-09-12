@@ -78,3 +78,11 @@ variable "init_commands" {
   type    = string
   default = "/bin/true"
 }
+
+# This variable is meant to aid in debugging of initialization scripts
+# when set to true the ssm-user will be allowed full use of sudo
+# It is not adviseable to set this for student use
+variable "debug" {
+  type    = bool
+  default = false
+}
