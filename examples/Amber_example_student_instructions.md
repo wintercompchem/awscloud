@@ -18,7 +18,7 @@ _Journal of Chemical Education_ **2018** _95_ (5), 888-894.
 DOI: 10.1021/acs.jchemed.7b00385
 
 
-	3.1. First we need to upload the necessary files to our instance (as provided in Supporting Information from the above article). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://52.14.208.231`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following files:
+	3.1. First we need to upload the necessary input files to our instance (as provided in Supporting Information from the above article). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://52.14.208.231`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following files:
 	
 	- 1\_min.in
 	- 2\_defrost.in
@@ -26,83 +26,101 @@ DOI: 10.1021/acs.jchemed.7b00385
 	- 4\_md.in
 	- ice.pdb
 	- process\_mdout.pl
+	- diffusion.spce.in
+	- rdf.spce.in
 	
 	
-	Move these files to the home directory:
+	Copy these files to the home directory:
+	
+	>Note: The uploaded files must be copied (not moved) into the home directory to ensure file ownership and permissions are correct.
+
 	
 	```sh
-		mv /var/www/html/files/* .
+	cp /var/www/html/files/* .
 	``` 
+
+	Since we are using a newer version of Amber the water-water cutoff needs to be adjusted accordingly. Adjust the cutoff in two of the input files with the following command:
+	
+	```sh
+	sed -i 's/9.287/8.287/g' 3_equil.in 4_md.in
+	```
 
 	3.2. Prepare the system with `tleap` by importing a box of SPCE water:
 	
 	To start tleap:
 
 	```sh
- 		tleap -s -f /opt/ambertools25/dat/leap/cmd/leaprc.water.spce
+ 	tleap -s -f /opt/ambertools25/dat/leap/cmd/leaprc.water.spce
 	```
 	Run the following commands in tleap
 	
 	```sh
-		ice=loadpdb ice.pdb
+	ice=loadpdb ice.pdb
 	```
 	
 	```sh
-		solvatebox ice SPCBOX 0 100.0
+	solvatebox ice SPCBOX 0 100.0
 	```
 	
 	```sh
-		saveamberparm ice wat_spce.prmtop wat_spce.inpcrd
+	saveamberparm ice wat_spce.prmtop wat_spce.inpcrd
 	```
 	
 	```sh
-		quit
+	quit
 	```
 	
 	3.3. Minimize the energy of the system:
 	
 	```sh
-		sander -O -i 1_min.in -o wat_spce_min.out -p wat_spce.prmtop -c wat_spce.inpcrd -r wat_spce_min.rst
+	sander -O -i 1_min.in -o wat_spce_min.out -p wat_spce.prmtop -c wat_spce.inpcrd -r wat_spce_min.rst
 	```
 	
 	3.4. Defrost (melt) the system:
 	
 	```sh
-		sander -O -i 2_defrost.in -o wat_spce_defrost.out -p wat_spce.prmtop -c wat_spce_min.rst -r wat_spce_defrost.rst
+	sander -O -i 2_defrost.in -o wat_spce_defrost.out -p wat_spce.prmtop -c wat_spce_min.rst -r wat_spce_defrost.rst
 	```
 	
 	3.5. Equilibrate the system:
-	
+
 	```sh
-		sander -O -i 3_equil.in -o wat_spce_equil.out -p wat_spce.prmtop -c wat_spce_defrost.rst -r wat_spce_equil.rst
+	sander -O -i 3_equil.in -o wat_spce_equil.out -p wat_spce.prmtop -c wat_spce_defrost.rst -r wat_spce_equil.rst
 	```
 	
-	3.6. Process output of equilibration:
+	3.6. Process output of equilibration (creates multiple output files in directory `EQUIL`):
 	
 	```sh
-		mkdir EQUIL
-	```
-	
-	```sh
-		cp process_mdout.pl EQUIL/
+	mkdir EQUIL
 	```
 	
 	```sh
-		cd EQUIL
+	cp process_mdout.pl EQUIL/
 	```
 	
 	```sh
-		perl process_mdout.pl ../wat_spce_equil.out
+	cd EQUIL
 	```
 	
 	```sh
-		cd ..
+	perl process_mdout.pl ../wat_spce_equil.out
+	```
+	
+	To download the data output files we need to copy them into the `/var/www/html/files` directory. (See Step 4 for out how download to local computer.)
+
+	```sh
+ 	cp summary.PRESS summary.TEMP summary.DENSITY /var/www/html/files
+	```
+	Move back up into the home directory:
+	
+	```sh
+	cd ..
 	```
 	
 	3.7. Run the production molecular dynamics:
 	
 	```sh
-		sander -O -i 4_md.in -o wat_spce_md.out -p wat_spce.prmtop -c wat_spce_equil.rst -r wat_spce_md.rst -x water_spce.mdcrd
+	sander -O -i 4_md.in -o wat_spce_md.out -p wat_spce.prmtop -c wat_spce_equil.rst -r wat_spce_md.rst -x water_spce.mdcrd
 	```
 	
 	3.8. Data analysis:
@@ -110,24 +128,21 @@ DOI: 10.1021/acs.jchemed.7b00385
 	Diffusion coefficient (creates output file diff\_spce):
 	
 	```sh
-		cpptraj wat_spce.prmtop diffusion_spce.in
+	cpptraj wat_spce.prmtop diffusion.spce.in
 	```
 	
 	Radial distribution function (creates output file rdf\_spce):
 	
 	```sh
-		cpptraj wat_spce.prmtop rdf_spce.in
+	cpptraj wat_spce.prmtop rdf.spce.in
 	```
-	
-	
-	
-4. To download the data output files we need to move them into another directory:
+	To download the data output files we need to copy them into the `/var/www/html/files` directory:
 
 	```sh
- 		mv wat_spce_equil.out diff_spce rdf_spce /var/www/html/files
+ 	cp diff_spce rdf_spce /var/www/html/files
 	```
 
-5.	Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://52.14.208.231`. Sign in with the same username and password you used to sign into the AWS console. Right click on each file and save it to disk.
+4.	Download output files. Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Right click on each file and save it to disk.
 
 
 
