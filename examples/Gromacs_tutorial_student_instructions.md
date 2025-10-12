@@ -24,21 +24,27 @@
    ```sh
 		wget https://files.rcsb.org/download/1AKI.pdb 
 	```
+	
 	```sh
 		wget https://mackerell.umaryland.edu/download.php?filename=CHARMM_ff_params_files/charmm36-jul2022.ff.tgz -O charmm36-jul2022.ff.tgz 
 	```
+
 	```sh
 		wget http://www.mdtutorials.com/gmx/lysozyme/Files/ions.mdp -O inputs/ions.mdp
 	```
+	
 	```sh
 		wget http://www.mdtutorials.com/gmx/lysozyme/Files/minim.mdp -O inputs/minim.mdp
 	```
+	
 	```sh
 		wget http://www.mdtutorials.com/gmx/lysozyme/Files/nvt.mdp -O inputs/nvt.mdp
 	```
+	
 	```sh
 		wget http://www.mdtutorials.com/gmx/lysozyme/Files/npt.mdp -O inputs/npt.mdp
 	```
+	
 	```sh
 		wget http://www.mdtutorials.com/gmx/lysozyme/Files/md.mdp -O inputs/md.mdp
 	```
@@ -62,9 +68,11 @@
 	```sh
 		gmx pdb2gmx -f 1AKI_clean.pdb -o 1AKI_processed.gro -water tip3p
 	```
+	
 	```sh
 		gmx editconf -f 1AKI_processed.gro -o 1AKI_newbox.gro -c -d 1.2 -bt cubic
 	```
+	
 	```sh
 		gmx solvate -cp 1AKI_newbox.gro -cs spc216.gro -o 1AKI_solv.gro -p topol.top
 	```
@@ -86,9 +94,11 @@
 	```sh
 		gmx grompp -f inputs/minim.mdp -c 1AKI_solv_ions.gro -p topol.top -o em.tpr
 	```
+	
 	```sh
 		gmx mdrun -v -deffnm em
 	```
+	
 	```sh
 		gmx energy -f em.edr -o potential.xvg
 	```
@@ -98,9 +108,11 @@
 	```sh
 		gmx grompp -f inputs/nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
 	```
+	
 	```sh
 		gmx mdrun -deffnm nvt
 	```
+	
 	```sh
 		gmx energy -f nvt.edr -o temperature.xvg
 	```
@@ -110,12 +122,15 @@
 	```sh
 		gmx grompp -f inputs/npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
 	```
+	
 	```sh
 		gmx mdrun -deffnm npt
 	```
+	
 	```sh
 		gmx energy -f npt.edr -o pressure.xvg
 	```
+	
 	```sh
 		gmx energy -f npt.edr -o density.xvg
 	```
@@ -125,6 +140,7 @@
 	```sh
 		gmx grompp -f inputs/md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_10.tpr
 	```
+	
 	```sh
 		gmx mdrun -deffnm md_0_10
 	```
