@@ -24,7 +24,7 @@ configure_ssm_user() {
 # Use the AWS console password to configure authentication,
 # so the student only has to use one password
 configure_apache() {
-  $${APT_GET} -y install apache2 libcgi-pm-perl
+  $${APT_GET} -y install apache2 libcgi-pm-perl unzip
   mkdir /var/www/html/files
   groupadd uploader
   usermod -a -G uploader ssm-user
