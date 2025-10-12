@@ -24,8 +24,8 @@ init_commands = <<END
 # Script adapted from https://ambermd.org/GetAmber.php and https://ambermd.org/InstUbuntu.php
 
 # You MUST fill out NAME and INSTITUTION for the download to work
-NAME="Alexandra Richards"
-INSTITUTION="Self"
+NAME=""
+INSTITUTION=""
 
 # Install dependencies
 apt-get -y install bzip2 cmake tcsh make gcc g++ gfortran flex bison patch bc wget xorg-dev libz-dev libbz2-dev openmpi-bin libopenmpi-dev python-is-python3
