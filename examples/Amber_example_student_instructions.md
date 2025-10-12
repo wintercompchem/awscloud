@@ -18,7 +18,7 @@ _Journal of Chemical Education_ **2018** _95_ (5), 888-894.
 DOI: 10.1021/acs.jchemed.7b00385
 
 
-	3.1. First we need to upload the necessary input files to our instance (as provided in Supporting Information from the above article). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://52.14.208.231`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following files:
+	3.1. First we need to upload the necessary input files to our instance (as provided in Supporting Information from the above article). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following files:
 	
 	- 1\_min.in
 	- 2\_defrost.in
