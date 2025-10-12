@@ -21,7 +21,7 @@
 	
 	3.2. Download the PDB file along with other necessary input files:
 
-   ```sh
+	```sh
 		wget https://files.rcsb.org/download/1AKI.pdb 
 	```
 	
@@ -208,3 +208,4 @@
 
    
   
+
