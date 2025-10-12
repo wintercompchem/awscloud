@@ -32,7 +32,7 @@ init_commands = <<END
 # Once you have the appropriate URL and credentials, fill them in here, along with the
 # MD5 of the file. This is listed at https://www.msg.chem.iastate.edu/GAMESS/download/dist.source.shtml
 GAMESS_URL=https://www.msg.chem.iastate.edu/GAMESS/download/source/gamess-current.tar.gz
-GAMESS_MD5=7003c7d2e910c4682d26c72ae23cb0df
+GAMESS_MD5=6210613bddd3930e67b7a7eba8c24e4c
 GAMESS_USER=
 GAMESS_PASSWORD=
 
