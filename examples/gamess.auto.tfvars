@@ -29,8 +29,10 @@ init_commands = <<END
 # If you chose this option you must fill out the form at: https://www.msg.chem.iastate.edu/gamess/License_Agreement.html
 # to obtain an email with the current credentials
 #
-# Once you have the appropriate URL and credentials, fill them in here
-GAMESS_URL=https://www.msg.chem.iastate.edu/GAMESS/download/source/gamess.Jul152024R2.tar.gz
+# Once you have the appropriate URL and credentials, fill them in here, along with the
+# MD5 of the file. This is listed at https://www.msg.chem.iastate.edu/GAMESS/download/dist.source.shtml
+GAMESS_URL=https://www.msg.chem.iastate.edu/GAMESS/download/source/gamess-current.tar.gz
+GAMESS_MD5=7003c7d2e910c4682d26c72ae23cb0df
 GAMESS_USER=
 GAMESS_PASSWORD=
 
@@ -39,14 +41,22 @@ GAMESS_PASSWORD=
 # we'll use --no-check-certificate here. If you are downloading from your own
 # web server you can remove the flag, if you'd like to.
 cd /home/ssm-user
-wget --user $${GAMESS_USER} --password $${GAMESS_PASSWORD} --no-check-certificate $${GAMESS_URL}
+
+# Download and verify. If md5 doesn't match, retry with exponential backoff
+# for a couple of minutes.
+for s in 0 1 2 4 8 16 32 64 128
+do
+  sleep $s
+  wget --user $${GAMESS_USER} --password $${GAMESS_PASSWORD} --no-check-certificate $${GAMESS_URL}
+  echo $${GAMESS_MD5}  gamess-current.tar.gz | md5sum -c && break
+done
 
 # Install build tools and library dependencies
 apt-get -y install csh gfortran make libatlas-base-dev liblapack-dev libblas-dev libxc-dev libxc9 cmake g++
 
 # Decompress the code
-tar xzvf gamess.Jul152024R2.tar.gz
-rm gamess.Jul152024R2.tar.gz
+tar xzvf gamess-current.tar.gz
+rm gamess-current.tar.gz
 cd gamess
 
 # Determine the version of FORTRAN and pass it to the install info script

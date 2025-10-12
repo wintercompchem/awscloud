@@ -25,9 +25,19 @@ init_commands = <<END
 # Script adapted from https://manual.gromacs.org/current/install-guide/index.html. 
 cd /root
 apt -y install make gcc g++ cmake
-wget https://ftp.gromacs.org/gromacs/gromacs-2025.2.tar.gz
-tar xzf gromacs-2025.2.tar.gz
-cd gromacs-2025.2
+
+# Download and verify. If md5 doesn't match, retry with exponential backoff
+# for a couple of minutes.
+GROMACS_MD5=5a2315b6f6e13b091bbbbfddee9eb62b
+for s in 0 1 2 4 8 16 32 64 128
+do
+  sleep $s
+  wget https://ftp.gromacs.org/gromacs/gromacs-2025.3.tar.gz
+  echo $${GROMACS_MD5}  gromacs-2025.3.tar.gz | md5sum -c && break
+done
+
+tar xzf gromacs-2025.3.tar.gz
+cd gromacs-2025.3
 mkdir build
 cd build
 cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON
