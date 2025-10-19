@@ -11,7 +11,7 @@
 
 2.	In the terminal the default shell is the Bourne shell. We recommend switching to the Bash shell by typing `bash` on the command line. Then type `cd` to navigate to the home directory.
 
-3.	Begin the GROMACS Lysozyme in Water tutorial adapted from [http://www.mdtutorials.com/gmx/lysozyme/index.html](http://www.mdtutorials.com/gmx/lysozyme/index.html). For more details on each step please refer to the original tutorial.
+3.	Begin the [GROMACS](https://www.gromacs.org/) Lysozyme in Water tutorial adapted from [http://www.mdtutorials.com/gmx/lysozyme/index.html](http://www.mdtutorials.com/gmx/lysozyme/index.html). For more details on each step please refer to the original tutorial.
 
 	3.1. Make a directory to hold the input files:
 

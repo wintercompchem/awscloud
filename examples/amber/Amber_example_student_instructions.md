@@ -11,7 +11,7 @@
 
 2.	In the terminal the default shell is the Bourne shell. We recommend switching to the Bash shell by typing `bash` on the command line. Then type `cd` to navigate to the home directory.
 
-3.	To illustrate running Amber we will walk through Part 1 of the lab "Comparing Classical Water Models Using Molecular Dynamics to Find Bulk Properties" as described in this [article](https://pubs.acs.org/doi/full/10.1021/acs.jchemed.7b00385):
+3.	To illustrate running [Amber](https://ambermd.org/) we will walk through Part 1 of the lab "Comparing Classical Water Models Using Molecular Dynamics to Find Bulk Properties" as described in this [article](https://pubs.acs.org/doi/full/10.1021/acs.jchemed.7b00385):
 
 	Laura J. Kinnaman, Rachel M. Roller, and Carrie S. Miller
 _Journal of Chemical Education_ **2018** _95_ (5), 888-894.
