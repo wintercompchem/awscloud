@@ -1,0 +1,9 @@
+set {
+basis cc-pVDZ
+reference uhf
+}
+molecule {
+0 2
+   H       0        0        0
+}
+energy('B3LYP')

@@ -1,0 +1,8 @@
+set basis cc-pVDZ
+molecule {
+0 1
+   H       0        0        0
+   H       0        0        1
+}
+optimize('B3LYP')
+frequencies('B3LYP')
