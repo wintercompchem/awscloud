@@ -72,6 +72,18 @@ make lapack
 # Build GAMESS
 make
 
+# create scratch and restart directories
+mkdir scratch restart
+
+# rungms appears to contain an error when checking for OMP_NUM_THREADS
+# the code, appearing on Line 164 contains a bash variable for checking
+# the number of arguments:
+#   if($# > 5)
+# However, because it is a csh script, it needs to be written as:
+#   if($#argv > 5)
+# This sed command makes the needed change.
+sed -i 's/if($# > 5)/if($#argv > 5)/g' rungms
+
 # Set ownership to ssm-user
 cd ..
 chown -R ssm-user:ssm-user gamess
