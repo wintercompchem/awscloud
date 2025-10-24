@@ -11,9 +11,10 @@ associated documentation and example workload files, can be obtained through Git
 
 ## We include the following documentation for the code:
 
-- Detailed instructions for instructors on how to use the code can be found [here](documentation/instructions_for_use_instructor.md).
-- A set of instructions for how a student can access their instance can be found [here](documentation/instructions_for_use_student.md).
-- An introduction to some key aspects of Terraform can be found [here](documentation/intro_to_terraform.md).
+- Detailed instructions for instructors on how to use the code can be found [here](https://github.com/wintercompchem/byodcloud/blob/main/documentation/instructions_for_use_instructor.md).
+- A set of instructions for how a student can access their instance can be found [here](https://github.com/wintercompchem/byodcloud/blob/main/documentation/instructions_for_use_student.md).
+- An introduction to some key aspects of Terraform can be found [here](https://github.com/wintercompchem/byodcloud/blob/main/documentation/intro_to_terraform.md).
+- Several example applications can be found in the [Examples](https://github.com/wintercompchem/byodcloud/tree/main/examples) folder.
 
 
 ## Authors
