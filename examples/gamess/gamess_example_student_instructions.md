@@ -32,13 +32,13 @@
  	./gamess/rungms ethane.inp >& ethane.log &
 	```
 		
-	3.3. To download the data output files (if desired) we need to copy them into the `/var/www/html/files` directory:
+	3.3. To download the data output file (if desired) we need to copy it into the `/var/www/html/files` directory:
 
 	```sh
  	cp ethane.log /var/www/html/files
 	```
 
-4.	Download output files. Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Right click on each file and save it to disk.
+4.	Download output file. Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Right click on the file and save it to disk.
 
 
 
