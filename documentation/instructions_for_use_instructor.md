@@ -27,7 +27,7 @@ Under service quotas click on quota name “Running On-Demand Standard (A, C, D,
 AWS CloudShell is a browser-based shell that gives command-line access to your AWS resources in a specified AWS region.
 Access CloudShell [here](https://console.aws.amazon.com/cloudshell/home).
 
-1. Install Terraform on CloudShell by running the following commands:
+1. Install [Terraform](https://developer.hashicorp.com/terraform) on CloudShell by running the following commands:
 
 	```sh
 		git clone https://github.com/tfutils/tfenv.git ~/.tfenv
@@ -43,7 +43,7 @@ Access CloudShell [here](https://console.aws.amazon.com/cloudshell/home).
 		cd byodcloud
 	```
 
-3. Using a command line editor such as vim, edit `instance_params.auto.tfvars` to specify the desired [AWS region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html), [instance type](https://aws.amazon.com/ec2/instance-types/), and volume size which specifies the disk size for the instance. In our example we allocate 100 GB. The maximum value per instance is 2048 GB. In AWS the disk performance is tied to the volume size. We recommend not using less than 100 GB to avoid degradation of disk performance.
+3. Using a command line editor such as vim, edit `instance_params.auto.tfvars` to specify the desired [AWS region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html), [instance type](https://aws.amazon.com/ec2/instance-types/), and volume size which specifies the disk size for the instance. In our example we allocate 100 GB. The maximum value per instance is 2048 GB.
 
 4. Edit `students.auto.tfvars` to reflect your class roster.
 
