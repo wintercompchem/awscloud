@@ -1,5 +1,5 @@
 
-## _Instructor Supplementary Information_
+## _Instructor Notes: Instructions for Using the Terraform Code with Amazon Web Services_
 Contents:
 
 - [Creating an AWS Account](#creating-an-aws-account)
