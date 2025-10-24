@@ -1,10 +1,13 @@
-# _Using Cloud Resources to Address Challenges Associated with BYOD in Computational Labs_
+# _Using Infrastructure as Code to Provision Cloud Resources for Computational Labs_
+
+
 
 Content may be periodically updated to fix bugs and make enhancements.
 
 ## Abstract
-In this work we provide a template for running computational labs in the cloud in an effort to improve access to computational resources for both students and instructors. Specifically, we provide a Terraform code that provisions resources in Amazon Web Services (AWS). The instructor can create a virtual machine (an "instance") per student and have the necessary software automatically installed upon instance creation
-using a customizable script. Students can access the instance using a command line interface using AWS Console within any standard web browser on any device. Any generated data files can be downloaded via the same web browser. We outline example workloads including open-source molecular dynamics and quantum chemistry programs. The Terraform code, including associated documentation and example workload files, can be obtained through GitHub [(https://github.com/wintercompchem/byodcloud)](https://github.com/wintercompchem/byodcloud).
+In this work we provide an infrastructure as code (IaC) template for running computational labs in the cloud in an effort to improve access to computational resources for both students and instructors. Specifically, we provide a Terraform code that provisions resources in Amazon Web Services (AWS). The instructor can create a virtual
+machine (an "instance") per student and have the necessary software automatically installed upon instance creation using a customizable script. Students can access the instance using a command line interface using AWS Console within any standard web browser on any device. Files can be uploaded (downloaded) to (from) the instance by the student via a web browser. We outline example workloads including open-source molecular dynamics and quantum chemistry programs. The Terraform code, including
+associated documentation and example workload files, can be obtained through GitHub [(https://github.com/wintercompchem/byodcloud)](https://github.com/wintercompchem/byodcloud).
 
 ## We include the following documentation for the code:
 
