@@ -124,7 +124,7 @@ Because Terraform is interacting with remote CSPs, the most common errors encoun
 
 For errors when running `terraform apply` you may encounter:
 ##### Resource limits imposed by AWS
-Newly created AWS accounts have a limit on the number of CPU cores that can be provisioned. This limit can be increased by AWS support. We have included [instructions](https://github.com/wintercompchem/byodcloud/blob/main/documentation/instructions_for_use_instructor.md#requesting-a-quota-increase-in-aws) to request this increase elsewhere in our documentation.
+Newly created AWS accounts have a limit on the number of CPU cores that can be provisioned. This limit can be increased by AWS support. We have included [instructions](https://github.com/wintercompchem/awscloud/blob/main/documentation/instructions_for_use_instructor.md#requesting-a-quota-increase-in-aws) to request this increase elsewhere in our documentation.
 
 If you encounter this error, run `terraform destroy`, request the increase and run `terraform apply` again after the increase has been granted.
 ##### Temporary resource limits

@@ -13,7 +13,7 @@
 
 3.	To illustrate running [GAMESS](https://www.msg.chem.iastate.edu/GAMESS/) we will do a simple geometry optimization of ethane.
 
-	3.1. First we need to upload the necessary input files to our instance (as provided [here](https://github.com/wintercompchem/byodcloud/tree/main/examples/gamess) in our Github repository). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following file:
+	3.1. First we need to upload the necessary input files to our instance (as provided [here](https://github.com/wintercompchem/awscloud/tree/main/examples/gamess) in our Github repository). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following file:
 	
 	- ethane.inp
 	

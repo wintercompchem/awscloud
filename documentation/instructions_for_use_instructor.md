@@ -36,18 +36,18 @@ Access CloudShell [here](https://console.aws.amazon.com/cloudshell/home).
 		tfenv use latest
 	```
 
-2. Download the Terraform code from github and change to the byodcloud directory:
+2. Download the Terraform code from github and change to the awscloud directory:
 
 	```sh
-		git clone https://github.com/wintercompchem/byodcloud.git
-		cd byodcloud
+		git clone https://github.com/wintercompchem/awscloud.git
+		cd awscloud
 	```
 
 3. Using a command line editor such as vim, edit `instance_params.auto.tfvars` to specify the desired [AWS region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html), [instance type](https://aws.amazon.com/ec2/instance-types/), and volume size which specifies the disk size for the instance. In our example we allocate 100 GB. The maximum value per instance is 2048 GB.
 
 4. Edit `students.auto.tfvars` to reflect your class roster.
 
-5. Copy one of the .auto.tfvars “workload” files from the `examples` folder into the `byodcloud` directory. For example, from the `byodcloud` directory type:
+5. Copy one of the .auto.tfvars “workload” files from the `examples` folder into the `awscloud` directory. For example, from the `awscloud` directory type:
 
 	```sh
 		cp examples/foleylab.auto.tfvars .
@@ -66,7 +66,7 @@ Access CloudShell [here](https://console.aws.amazon.com/cloudshell/home).
 	```sh
 		terraform apply
 	```
-The output of `terraform apply` includes the student passwords which need to be distributed to the students. The students can then follow [these instructions](https://github.com/wintercompchem/byodcloud/blob/main/documentation/instructions_for_use_student.md) to access their instances.
+The output of `terraform apply` includes the student passwords which need to be distributed to the students. The students can then follow [these instructions](https://github.com/wintercompchem/awscloud/blob/main/documentation/instructions_for_use_student.md) to access their instances.
 > Note: At any point, student instances can be added or removed by adjusting the students.auto.tfvars file accordingly and re-running terraform apply.
 > 
 > Note: If you need to debug an init script on the instance, you may use the following command:

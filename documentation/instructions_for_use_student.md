@@ -22,7 +22,7 @@
 	cp /var/www/html/files/* .
 	``` 
 
-4.	At this point students would follow the lab-specific instructions to generate data with the pre-installed software. We provide some examples [here](https://github.com/wintercompchem/byodcloud/tree/main/examples).
+4.	At this point students would follow the lab-specific instructions to generate data with the pre-installed software. We provide some examples [here](https://github.com/wintercompchem/awscloud/tree/main/examples).
 
 5.	To download data output files we need to move them into another directory. To move a file to the directory located at /var/www/html/files, type the following in the command line shell:
 

@@ -17,7 +17,7 @@
 _Journal of Chemical Education_ **2023** _100_ (1), 389-394.
 DOI: 10.1021/acs.jchemed.2c00706
 
-	3.1. First we need to upload the necessary input files to our instance (as provided [here](https://github.com/wintercompchem/byodcloud/tree/main/examples/psi4) in our Github repository). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following files:
+	3.1. First we need to upload the necessary input files to our instance (as provided [here](https://github.com/wintercompchem/awscloud/tree/main/examples/psi4) in our Github repository). Go back to the other browser tab with the AWS console and copy the IP address of your instance to the clipboard by clicking on the copy icon. Open a new browser tab and click on the search bar. Type `http://` then paste the IP address and hit enter. For example, it would look like: `http://12.34.56.78`. Sign in with the same username and password you used to sign into the AWS console. Click the "Upload" button, browse to the appropriate directory and select the following files:
 	
 	- H\_atom.in
 	- H2\_singlet.in
