@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Create an AWS user for the student
 resource "aws_iam_user" "student" {
   name          = var.name

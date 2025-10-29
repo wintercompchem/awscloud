@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Create the Identity and Access Management resources that
 # allow our instances to communicate with AWS Systems Manager
 # 

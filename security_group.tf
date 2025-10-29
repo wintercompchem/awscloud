@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # A Security Group provides a firewall to protect our instances
 # We create the group and configure the rules here
 

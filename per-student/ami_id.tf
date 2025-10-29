@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Find the most recent version of the Ubuntu 22.04 "Jammy" Amazon Machine Image for deployment
 
 data "aws_ami" "ubuntu-linux" {

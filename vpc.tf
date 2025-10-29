@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Virtual Private Cloud and related resources are created here
 
 # A VPC requires a network range expressed in Classless Inter Domain Routing notation

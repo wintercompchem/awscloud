@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 terraform {
   # This lab was developed and tested on Terraform 1.5.4
   # Any 1.5.x version should work

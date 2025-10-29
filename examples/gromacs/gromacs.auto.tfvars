@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Installation and configuration of software is done here
 # Any bash commands between
 # init_commands = <<END

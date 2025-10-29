@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # students, region, instance_type, volume_size and  init_commands should be set in a .auto.tfvars file
 # see example files for how to do this
 # 

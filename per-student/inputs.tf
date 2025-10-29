@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Local variables for the module
 # Do not override here! Override in a .auto.tfvars file in the root of the project
 

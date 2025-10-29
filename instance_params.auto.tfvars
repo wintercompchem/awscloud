@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # AWS region us-east-2 is in Ohio.
 # You may wish to choose the region geographically closest
 # to you to reduce latency.

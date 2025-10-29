@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Edit student list before using.
 # The names will become each student's
 # username for the AWS Console.

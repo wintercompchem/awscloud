@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Call the student module to create an EC2 instance and a AWS console login for each student
 
 module "student" {

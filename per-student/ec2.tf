@@ -1,3 +1,5 @@
+# This file is part of https://github.com/wintercompchem/awscloud 
+#
 # Creates an assigned student EC2 instance
 resource "aws_instance" "student" {
   ami                         = data.aws_ami.ubuntu-linux.id
