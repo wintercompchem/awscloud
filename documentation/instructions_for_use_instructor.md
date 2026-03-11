@@ -1,3 +1,12 @@
+# Supporting Information for
+# _Using Infrastructure as Code to Provision Cloud Resources for Computational Labs_
+
+Nicolas D. Winter*,<sup>1</sup> and Alexandra R. Richards<sup>2</sup>
+
+<sup>1</sup>Department of Physical Sciences, Dominican University, River Forest, Illinois, 60305<br>
+<sup>2</sup>Forest Park, Illinois, 60130 (Private Consultant for Dominican University)
+
+*E-mail: [nwinter@dom.edu](mailto:nwinter@dom.edu)
 
 ## _Instructor Notes: Instructions for Using the Terraform Code with Amazon Web Services_
 Contents:
