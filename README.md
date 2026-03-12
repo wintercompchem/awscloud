@@ -22,11 +22,11 @@ associated documentation and example workload files, can be obtained through Git
 [Nicolas D. Winter](mailto:nwinter@dom.edu)<br>
 Department of Physical Sciences<br>
 Dominican University<br>
-River Forest, Illinois, 60305
+River Forest, Illinois 60305, United States
 
 Alexandra R. Richards<br>
 Private Consultant for Dominican University<br>
-Forest Park, Illinois, 60130
+Forest Park, Illinois 60130, United States
 
 ## Cite us!
 If you use our Terraform code in your teaching/research, please cite us!
