@@ -1,3 +1,12 @@
+# Supporting Information for
+# _Using Infrastructure as Code to Provision Cloud Resources for Computational Labs_
+
+Nicolas D. Winter*,<sup>1</sup> and Alexandra R. Richards<sup>2</sup>
+
+<sup>1</sup>Department of Physical Sciences, Dominican University, River Forest, Illinois 60305, United States<br>
+<sup>2</sup>Forest Park, Illinois 60130, United States (Private Consultant for Dominican University)
+
+*E-mail: [nwinter@dom.edu](mailto:nwinter@dom.edu)
 ## _Student Instructions for Running Example Psi4 Lab on a Linux Instance in the Amazon Web Services Cloud_
 
 1.	Open a browser and navigate to [https://aws.amazon.com/console/](https://aws.amazon.com/console/)
